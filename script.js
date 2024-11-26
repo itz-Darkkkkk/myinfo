@@ -1,23 +1,15 @@
-// Collapsible About Section
-document.getElementById('aboutToggle').addEventListener('click', () => {
-  const aboutContent = document.getElementById('aboutContent');
-  aboutContent.classList.toggle('hidden');
-});
+// Navigation to other pages
+function navigateTo(page) {
+  window.location.href = page;
+}
 
-// Smooth Scrolling
-document.querySelectorAll('.nav-link').forEach(link => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    document.querySelector(link.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
-  });
-});
+// Toggle "Click to Know More"
+function toggleContent(id) {
+  const element = document.getElementById(id);
+  element.style.display = element.style.display === 'block' ? 'none' : 'block';
+}
 
-// Modal Pop-ups (optional future feature for projects)
-const projectButtons = document.querySelectorAll('.project-btn');
-projectButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    alert(`Details for: ${button.dataset.project}`);
-  });
-});
+// Show Modal
+function showModal(projectName) {
+  alert(`Details about ${projectName} coming soon!`);
+}
